@@ -15,8 +15,12 @@ const NavLink = (props) => {
 
 const Text = styled.label`
   position: relative;
-  transition: 200ms;
+  transition: 500ms;
   top: 0;
+
+  &:hover {
+    transition: 300ms;
+  }
 `;
 
 const SubText = styled.label`
@@ -42,11 +46,13 @@ const Link = styled.a`
     color: var(--color-secondary);
   }
 
-  &:hover ${Text} {
-    top: -100%;
-  }
-  &:hover ${SubText} {
-    top: -100%;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover ${Text} {
+      top: -100%;
+    }
+    &:hover ${SubText} {
+      top: -100%;
+    }
   }
 `;
 
